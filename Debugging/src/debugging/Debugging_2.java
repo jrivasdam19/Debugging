@@ -2,7 +2,7 @@ package debugging;
 
 public class Debugging_2 {
 
-    static int maximo(int a, int b) {
+    static int maximo2(int a, int b) {
         int max;
         if (a < b) {
             max = b;
@@ -19,7 +19,7 @@ public class Debugging_2 {
         a = Entrada.entero();
         System.out.println("Introduce otro número:: ");
         b = Entrada.entero();
-        max = maximo(a, b);
+        max = maximo2(a, b);
         System.out.println("El número mayor es: " + max);
     }
 }
