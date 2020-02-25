@@ -3,15 +3,16 @@ package debugging;
 public class Debugging_6 {
 
     static boolean es_primo(int num) {
-        boolean primo;
+        boolean primo = false;
         int i;
-        primo = true;
-        i = 2;
-        while (i < num && primo == true) {
-            if (num % i != 0) {
-                primo = false;
-                i++;
-            }
+        i = 1;
+        int resto = 1;
+        while (resto != 0) {
+            i++;
+            resto = num % i;
+        }
+        if (num == i) {
+            primo = true;
         }
         return (primo);
     }
@@ -20,24 +21,27 @@ public class Debugging_6 {
         int cont;
         cont = 1;
         for (int i = 2; i <= num; i++) {
-            if (es_primo(i) && num % i != 0) {
+            if (es_primo(i) && num % i == 0) {
                 cont++;
             }
-            }return (cont);
         }
-        
-    static int []divisores(int num){
-        int cont=0;
+        return (cont);
+    }
+
+    static int[] divisores(int num) {
+        int cont = 1;
         int div[];
         int num_div;
-        num_div=num_divisores(num);
-        div=new int[num_div];
-        for(int i=1;i<=num;i++){
-            if(es_primo(i)&&num%i==0){
-                div[cont]=i;
+        num_div = num_divisores(num);
+        div = new int[num_div];
+        div[0] = 1;
+        for (int i = 2; i <= num; i++) {
+            if (es_primo(i) && num % i == 0) {
+                div[cont] = i;
                 cont++;
             }
-        }return(div);
+        }
+        return (div);
     }
 
     public static void main(String[] args) {

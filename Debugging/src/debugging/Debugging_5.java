@@ -3,6 +3,20 @@ package debugging;
 public class Debugging_5 {
 
     static boolean es_primo(int num) {
+        boolean primo=false;
+        int i;
+        i = 1;
+        int resto=1;
+        while (resto!=0) {
+            i++;
+            resto=num%i;
+        }
+        if(num==i){
+            primo=true;
+        }
+        return (primo);
+    }
+    /*static boolean es_primo(int num) {
         boolean primo;
         int i;
         primo = true;
@@ -10,17 +24,17 @@ public class Debugging_5 {
         while (i < num || primo == true) {
             if (num % i == 0) {
                 primo = true;
-                i++;
             }
+            i++;
         }
         return (primo);
-    }
+    }*/
 
     static int num_divisores(int num) {
         int cont;
         cont = 1;
         for (int i = 2; i <= num; i++) {
-            if (es_primo(i) || num % i == 0) {
+            if (es_primo(i) && num % i == 0) {
                 cont++;
             }
 

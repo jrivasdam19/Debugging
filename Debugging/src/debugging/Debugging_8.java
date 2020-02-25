@@ -2,7 +2,7 @@ package debugging;
 
 public class Debugging_8 {
 
-    static boolean es_primo(int num) {
+    /*static boolean es_primo(int num) {
         boolean primo;
         int i;
         primo = true;
@@ -14,13 +14,27 @@ public class Debugging_8 {
             i++;
         }
         return (primo);
+    }*/
+    static boolean es_primo(int num) {
+        boolean primo = false;
+        int i;
+        i = 1;
+        int resto = 1;
+        while (resto != 0) {
+            i++;
+            resto = num % i;
+        }
+        if (num == i) {
+            primo = true;
+        }
+        return (primo);
     }
 
     static int suma_divisores_propios(int num) {
         int suma;
         suma = 0;
-        for (int i = 3; i < num; i++) {
-            if (num % i != 0) {
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
                 suma += i;
             }
         }
@@ -34,6 +48,7 @@ public class Debugging_8 {
         System.out.println("Introduce b: ");
         b = Entrada.entero();
         if (a == suma_divisores_propios(b) && b == suma_divisores_propios(a)) {
+        //if (a == suma_divisores_propios(a) && b == suma_divisores_propios(b)) { //Números perfectos
             System.out.println(a + " y " + b + " son amigos.");
 
         } else {

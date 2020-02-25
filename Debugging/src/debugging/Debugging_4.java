@@ -4,13 +4,14 @@ public class Debugging_4 {
 
     static void mostrar(int a, int b) {
         int mayor = 0, menor;
-        if (a > b) {
+        if (a < b) {
             mayor = b;
             menor = a;
         } else {
             menor = b;
+            mayor = a;
         }
-        for (int i = menor + 1; i < mayor; i++) {
+        for (int i = menor; i <= mayor; i++) {
             System.out.println(i + " ");
             System.out.println();
         }

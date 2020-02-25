@@ -8,7 +8,7 @@ public class Debugging_7 {
         min = minimo(a, b);
         mcd = 1;
         for (int i = 2; i < min; i++) {
-            if (a % i == 0 || b % i == 0) {
+            if (a % i == 0 && b % i == 0) {
                 mcd = i;
             }
         }
